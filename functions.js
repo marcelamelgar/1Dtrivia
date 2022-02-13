@@ -157,3 +157,34 @@ var twenty = {
     "wrong2" : "Four",
     "wrong3" : "Up All Night"
 }
+
+
+var questions = [one.question, two.question, three.question, four.question, five.question, 
+six.question, seven.question, eight.question, nine.question, ten.question,
+eleven.question, twelve.question, thirteen.question, fourteen.question, fifteen.question,
+sixteen.question, seventeen.question, eighteen.question, nineteen.question, twenty.question,]
+
+var answers = [
+    [one.wrong1, one.wrong2, one.right, one.wrong3],
+    [two.right, two.wrong1, two.wrong2, two.wrong3],
+    [three.wrong1, three.right, three.wrong2, three.wrong3],
+    [four.wrong1, four.wrong2, four.wrong3, four.right],
+    [five.wrong1, five.right, five.wrong2, five.wrong3],
+    [six.wrong1, six.wrong2, six.wrong3, six.right],
+    [seven.right, seven.wrong1, seven.wrong2, seven.wrong3],
+    [eight.wrong1, eight.wrong2, eight.right, eight.wrong3],
+    [nine.right, nine.wrong1, nine.wrong2, nine.wrong3],
+    [ten.wrong1, ten.wrong2, ten.right, ten.wrong3],
+    [eleven.right, eleven.wrong1, eleven.wrong2, eleven.wrong3],
+    [twelve.wrong1, twelve.wrong2, twelve.wrong3, twelve.right],
+    [thirteen.wrong1, thirteen.wrong2, thirteen.right, thirteen.wrong3],
+    [fourteen.wrong1, fourteen.right, fourteen.wrong2, fourteen.wrong3],
+    [fifteen.wrong1, fifteen.wrong2, fifteen.wrong3, fifteen.right],
+    [sixteen.wrong1, sixteen.wrong2, sixteen.wrong3, sixteen.right],
+    [seventeen.wrong1, seventeen.right, seventeen.wrong2, seventeen.wrong3],
+    [eighteen.right, eighteen.wrong1, eighteen.wrong2, eighteen.wrong3],
+    [nineteen.wrong1, nineteen.right, nineteen.wrong2, nineteen.wrong3],
+    [twenty.wrong1, twenty.right, twenty.wrong2, twenty.wrong3]
+]
+
+var correctas = [2,0,1,3,1,3,0,2,0,2,0,3,2,1,3,3,1,0,1,1]
