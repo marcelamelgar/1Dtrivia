@@ -6,69 +6,65 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="Header">
-              <center>
-              <h1>1D Trivia Game</h1>
-              <h3>Test your fan knowledge</h3>
-              </center>
+      <div class="container">
+        <div class="Header">
+          <center>
+            <h1>1D Trivia Game</h1>
+            <h3>Test your fan knowledge</h3>
+          </center>
+        </div>
+      
+        <div class="questions">
+          <br><br><br><br><br>
+          <center>
+            <h1>Let's Play</h1>
+          </center>
+          <h2>Pick the Right Answer...</h2>
+          <form id="questionario">
+            <div class="form-group row">
+              <label for="question" class="col-sm-2 col-form-label">Question:</label>
+              <div class="col-sm-10">
+                <p><span id="aquiquestion"></span></p>
+              </div>
             </div>
-            
-            <div class="questions">
-              <br><br><br><br><br>
-              <center>
-              <h1>Let's Play</h1>
-              </center>
-              <h2>Pick the Right Answer...</h2>
-              <form>
-                <div class="form-group row" id="questonario">
-                  <label for="question" class="col-sm-2 col-form-label">Question:</label>
-                  <div class="col-sm-10">
-                    <p><span id="aquiquestion"></span></p>
-                  </div>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" data-index="0">
-                  <label class="form-check-label" for="exampleRadios1">
-                    <span id="opcion1"></span>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" data-index="1">
-                  <label class="form-check-label" for="exampleRadios2">
-                    <span id="opcion2"></span>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" data-index="2">
-                  <label class="form-check-label" for="exampleRadios2">
-                    <span id="opcion3"></span>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4" data-index="3">
-                  <label class="form-check-label" for="exampleRadios2">
-                    <span id="opcion4"></span>
-                  </label>
-                </div>
-                <button class="btn"id="startButton">check answer</button>
-              </form>
+            <div id="questonarios">
+              <input  type="checkbox" name="exampleRadios" id="exampleRadios1" value="0">
+              <label  for="exampleRadios1">
+                <span id="opcion1"></span>
+              </label><br>
+              <input  type="checkbox" name="exampleRadios" id="exampleRadios2" value="1" data-index="1">
+              <label for="exampleRadios2">
+                <span id="opcion2"></span>
+              </label><br>
+              <input type="checkbox" name="exampleRadios" id="exampleRadios3" value="2" data-index="2">
+              <label for="exampleRadios2">
+                <span id="opcion3"></span>
+              </label><br>
+              <input type="checkbox" name="exampleRadios" id="exampleRadios4" value="3" data-index="3">
+              <label for="exampleRadios2">
+                <span id="opcion4"></span>
+              </label><br>
             </div>
-            
-            <div class="info">
-              <br><br><br><br><br>
-              <center>
-              <h2>trivia</h2>
-              </center>
-              <p><span id="feedback"></span></p>
-              <card class="score">
-              <h2>Score:</h2>
-              <p><span id="aquiscore"></span></p>
-              </card>
-              <center>
-              <button class="btn" id="again" onclick="GetSelected()">Play Again </button>
+          </form>
+          <button class="btn" id="startButton" onclick="GetSelected()">check answer</button>
+        </div>
+      
+        <div class="info">
+          <br><br><br><br><br>
+          <center>
+            <h2>trivia</h2>
+          <p><span id="feedback"></span></p>
+        </center>
+          <card class="score">
+            <h2>Score:</h2>
+            <center>
+            <h3><span id="aquiscore"></span></h3><br><br>
+          </center>
+          </card>
+          <center>
+            <button class="btn" id="again">Play Again </button>
             </div>
-          </div>
+        </div>
 
           <script>
             var one = {
@@ -260,9 +256,7 @@
                 [twenty.wrong1, twenty.right, twenty.wrong2, twenty.wrong3]
             ]
 
-            var correctas = [2,0,1,3,1,3,0,2,0,2,0,3,2,1,3,3,1,0,1,1]
-
-            // document.getElementById("aquiquestion").innerHTML = questions[1]
+            var correctas = ["2","0","1","3","1","3","0","2","0","2","0","3","2","1","3","3","1","0","1","1"]
             
             var counter = 0;
             var points = 0;
@@ -273,30 +267,34 @@
             document.getElementById("opcion3").innerHTML = answers[num][2];
             document.getElementById("opcion4").innerHTML = answers[num][3];
 
+            function GetSelected() {
+              var yes = new Array();
+              var pick = document.getElementById("questionario");
+              var actualCorrectAnswerIndex = correctas[num];
+              var userChecked = questionario.getElementsByTagName("INPUT");
             
+                for (var i = 0; i < userChecked.length; i++) {
+                  if (userChecked[i].checked) {
+                    yes.push(userChecked[i].value);
+                    }
+                }
+                
+                var pick = true;
 
-            // var answerIndex = Number(e.target.getAttribute('data-index'));
-            
-            // function GetSelected() {
-            //   var yes = new Array();
-            //   var completed = document.getElementById("questionario");
-            //   var actualCorrectAnswerIndex = correctas[num];
-            
-            //     var userChecked = questionario.getElementsByTagName("INPUT");
-            
-            //     for (var i = 0; i < userChecked.length; i++) {
-            //       if (userChecked[i].checked) {
-            //         yes.push(userChecked[i].value);
-            //         }
-            //     }
+                if(yes[0] == actualCorrectAnswerIndex){
+                  pick = false;
+                  document.getElementById("feedback").innerHTML = "RESPUESTA CORRECTA!";
+                  points += 10;
+                  alert("ah")
+                }
+                else{
+                  console.log(yes)
+                  document.getElementById("feedback").innerHTML = "RESPUESTA INCORRECTA!";
+                }
+                document.getElementById("aquiscore").innerHTML = points;
+                counter+=1
+              };
 
-            //     if(yes == actualCorrectAnswerIndex){
-            //       alert('si');
-            //     }
-            //     else{
-            //       alert('no')
-            //     }
-            //   };
 
           </script>
     </body>
