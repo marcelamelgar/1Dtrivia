@@ -1,5 +1,5 @@
 # 1Dtrivia
-Web trivia game with one direction questions that every fan should know.
+Web trivia game with one direction questions that every fan should know the answer to. This was a project created with the objective of practicing frontend development.
 
 ## Development
 - HTML
