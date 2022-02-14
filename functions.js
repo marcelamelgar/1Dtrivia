@@ -188,3 +188,5 @@ var answers = [
 ]
 
 var correctas = [2,0,1,3,1,3,0,2,0,2,0,3,2,1,3,3,1,0,1,1]
+
+document.getElementById("aquiquestion").innerHTML = questions[1]
